@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wpl index{% endblock %}
+
+{% block body %}
+    <h1>Lista wpłat</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Identyfikator</th>
+                <th>Kwota Wpłaty</th>
+                <th>Data Płatności</th>
+                <th>Tytuł</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wpl in wpls %}
+            <tr>
+                <td>{{ wpl.id }}</td>
+                <td>{{ wpl.kwota }}&nbsp;PLN</td>
+                <td>{{ wpl.dataPlatnosci ? wpl.dataPlatnosci|date('Y-m-d') : '' }}</td>
+                <td>{{ wpl.tytul }}</td>
+                <td>
+                    <a href="{{ path('wpl_show', {'id': wpl.id}) }}">Pokaż</a>
+                    <a href="{{ path('wpl_edit', {'id': wpl.id}) }}">Edytuj</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Brak wpisów</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('wpl_new') }}">Dodaj nową wpłatę</a>
+{% endblock %}

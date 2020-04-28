@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kont{% endblock %}
+
+{% block body %}
+    <h1>Kont</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ kont.id }}</td>
+            </tr>
+            <tr>
+                <th>Nazwa</th>
+                <td>{{ kont.nazwa }}</td>
+            </tr>
+            <tr>
+                <th>Adres</th>
+                <td>{{ kont.adres }}</td>
+            </tr>
+            <tr>
+                <th>Nip</th>
+                <td>{{ kont.nip }}</td>
+            </tr>
+            <tr>
+                <th>Konto</th>
+                <td>{{ kont.konto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('kont_index') }}">back to list</a>
+
+    <a href="{{ path('kont_edit', {'id': kont.id}) }}">edit</a>
+
+    {{ include('kont/_delete_form.html.twig') }}
+{% endblock %}

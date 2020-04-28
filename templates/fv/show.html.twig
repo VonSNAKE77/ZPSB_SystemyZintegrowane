@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fv{% endblock %}
+
+{% block body %}
+    <h1>Fv</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fv.id }}</td>
+            </tr>
+            <tr>
+                <th>NumerFaktury</th>
+                <td>{{ fv.numerFaktury }}</td>
+            </tr>
+            <tr>
+                <th>TerminPlatnosci</th>
+                <td>{{ fv.terminPlatnosci }}</td>
+            </tr>
+            <tr>
+                <th>KontId</th>
+                <td>{{ fv.kontId }}</td>
+            </tr>
+            <tr>
+                <th>Typ</th>
+                <td>{{ fv.typ }}</td>
+            </tr>
+            <tr>
+                <th>StatusPlatnosci</th>
+                <td>{{ fv.statusPlatnosci }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('fv_index') }}">back to list</a>
+
+    <a href="{{ path('fv_edit', {'id': fv.id}) }}">edit</a>
+
+    {{ include('fv/_delete_form.html.twig') }}
+{% endblock %}

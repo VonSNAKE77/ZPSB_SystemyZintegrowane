@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+
+{{ form_label(form.kontId,'identyfikator Id Kontrachenta') }}
+{{ form_widget(form.kontId) }}
+
+    {{ form_row(form.typ) }}
+    {{ form_row(form.terminPlatnosci) }}
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

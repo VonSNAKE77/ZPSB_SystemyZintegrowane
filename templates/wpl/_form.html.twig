@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="kwota">Email address</label>
+                {{ form_widget(form.kwota, {atrr : {'class' : 'form-control'}}) }}
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+    </div>
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dodaj nową wpłatę{% endblock %}
+
+{% block body %}
+    <h1>Dodaj nową wpłatę</h1>
+
+    {{ include('wpl/_form.html.twig') }}
+
+    <a type="button" class="btn btn-light" href="{{ path('wpl_index') }}">back to list</a>
+{% endblock %}

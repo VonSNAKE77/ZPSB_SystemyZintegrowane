@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wpl{% endblock %}
+
+{% block body %}
+    <h1>Edit Wpl</h1>
+
+    {{ include('wpl/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('wpl_index') }}">back to list</a>
+
+    {{ include('wpl/_delete_form.html.twig') }}
+{% endblock %}

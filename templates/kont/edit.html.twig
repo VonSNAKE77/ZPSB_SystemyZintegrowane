@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Kont{% endblock %}
+
+{% block body %}
+    <h1>Edit Kont</h1>
+
+    {{ include('kont/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('kont_index') }}">back to list</a>
+
+    {{ include('kont/_delete_form.html.twig') }}
+{% endblock %}

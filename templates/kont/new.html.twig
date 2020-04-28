@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Kont{% endblock %}
+
+{% block body %}
+    <h1>Create new Kont</h1>
+
+    {{ include('kont/_form.html.twig') }}
+
+    <a href="{{ path('kont_index') }}">back to list</a>
+{% endblock %}

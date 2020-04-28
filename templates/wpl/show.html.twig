@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wpłata o id:{{ wpl.id }} {% endblock %}
+
+{% block body %}
+    <h1>Szczegóły Wpłaty o id: {{ wpl.id }}</h1>
+    <a type="button" class="btn btn-light" href="{{ path('wpl_index') }}"><<&nbsp;Wróć do listy</a>&emsp;<a type="button" class="btn btn-primary" href="{{ path('wpl_edit', {'id': wpl.id}) }}">Edytuj</a>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Identyfikator</th>
+                <td>{{ wpl.id }}</td>
+            </tr>
+            <tr>
+                <th>Kwota wpłaty</th>
+                <td>{{ wpl.kwota }}&nbsp; PLN</td>
+            </tr>
+            <tr>
+                <th>Data Płatności</th>
+                <td>{{ wpl.dataPlatnosci ? wpl.dataPlatnosci|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Tytuł Wpłaty</th>
+                <td>{{ wpl.tytul }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    {{ include('wpl/_delete_form.html.twig') }}
+{% endblock %}
